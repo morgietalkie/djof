@@ -40,13 +40,14 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const userData: User = await userRes.json();
   const postData: Post[] = await postRes.json();
 
+  // Inject user to every post.
   const injectUser: Post[] = postData.map((post) => {
     return { ...post, user: userData };
   });
 
-  const user = { ...userData, posts: injectUser };
+  // Append posts to user object.
 
-  console.log(user);
+  const user = { ...userData, posts: injectUser };
 
   return {
     props: {

@@ -45,6 +45,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   const userData: User = await userRes.json();
 
+  // Append user to post
+
   const post: Post = { ...postData, user: userData };
 
   return {

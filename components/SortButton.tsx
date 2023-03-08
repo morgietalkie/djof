@@ -13,14 +13,11 @@ export const SortButton = () => {
   };
 
   const handleSort = (value: string) => {
-    router.push(
-      {
-        pathname: "/",
-        query: { ...router.query, sort: value },
-      },
-      undefined,
-      {}
-    );
+    // Append sort value to url
+    router.push({
+      pathname: "/",
+      query: { ...router.query, sort: value },
+    });
   };
   return (
     <div onClick={toggleDropDown}>

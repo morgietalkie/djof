@@ -13,6 +13,7 @@ export const SearchBar = () => {
     e.preventDefault();
     if (router.query.search === search) return;
 
+    // Append search value to url
     router.push({
       pathname: "/",
       query: { ...router.query, search },
